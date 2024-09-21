@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>image changer</title>
+<style type="text/css">
+	.container{
+		background-size: cover;
+		margin: auto;
+		width: 500px;
+		height: 300px;
+		transform: translateY(50%);
+		box-shadow: 5px 8px 9px red;
+		background-color: blue;
+	}
+	img{ 
+		transform: translateX(80%);
+		border-radius: 50%;
+		margin-top: -50px;
+		box-shadow: 5px 8px 9px red;
+		transition: transform 5.5s ease-out;
+		margin-top: -18vh;
+	}
+
+	
+img.hover{
+transform:translate(0deg);
+width:400px;
+box-shadow:9px 11px 12px red;
+position:absolute;
+left:20px;
+height:300px;
+}
+.bio, .name{
+text-align:center;
+color:floralwhite;
+font-size:17px;
+font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<img src="rashford.jpg" width="200px;" height="200px">
+<p class="bio">I am a lover of God and my church is Universal of the kingdom of God</p>
+<h3 class="name"><span style="color: red;">Ronnie</span>
+<span style="color: blue;">Is my name</span></h3>
+</div>
+<script type="text/javascript">
+const imageChanger=[
+{
+photo:"ron 1.jpg",
+text:"Every time I step into the ring, I'm loking for a knockout.I'm there to make a statement",
+Uname:"Michelle",
+},
+{
+photo:"ron 2.jfif",
+text:"Boxing is the ultimate challenge.There's nothing that can compare to testing yourself the way you do every time you step in the ring",
+Uname:"Benjamin",
+},
+{
+photo:"RON 3.jfif",
+text:"I hated every minute of training, But I said,'Don't' quit. Suffer now and live the rest of your life as a Champion",
+Uname:"Ronnie",
+},
+
+]
+const
+img1=document.querySelector("img");
+const
+text1=document.querySelector(".bio");
+const
+nme=document.querySelector(".name");
+
+let start=0;
+imagechange()
+
+function imagechange() {
+const{photo,text,Uname}
+=imageChanger[start];
+
+img1.src=photo;
+text1.innerHTML=text;
+nme.innerHTML=Uname;
+start++
+if (start===imageChanger.length) {
+start=0;
+}
+
+setTimeout(imagechange,1000)
+}
+</script>
+</body>
+</html>
